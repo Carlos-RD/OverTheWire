@@ -1,0 +1,36 @@
+Bandit Level 0
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+bandit0@bandit:~$ ls
+readme
+bandit0@bandit:~$ cat readme
+
+Bandit Level 0 → Level 1
+bandit1@bandit:~$ cat ./-
+
+Bandit Level 1 → Level 2
+bandit2@bandit:~$ cat ./spaces\ in\ this\ filename
+
+Bandit Level 3 → Level 4
+bandit3@bandit:~/inhere$ ls -al
+
+Bandit Level 4 → Level 5
+bandit4@bandit:~/inhere$ file ./*
+./-file00: data
+./-file01: data
+./-file02: data
+./-file03: data
+./-file04: data
+./-file05: data
+./-file06: data
+./-file07: ASCII text
+./-file08: data
+./-file09: data
+
+cat ./-file07
+
+Bandit Level 5 → Level 6
+find . -type f -size 1033c ! -executable -exec file {} + | grep ASCII
+
+Bandit Level 6 → Level 7
+
+
