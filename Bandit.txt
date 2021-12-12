@@ -32,5 +32,19 @@ Bandit Level 5 → Level 6
 find . -type f -size 1033c ! -executable -exec file {} + | grep ASCII
 
 Bandit Level 6 → Level 7
+find / -group bandit6 -user bandit7 -size 33c -type f
 
+Bandit Level 7 → Level 8
+find . -name data.txt
+grep -rnw ./data.txt -e millionth
 
+Bandit Level 8 → Level 9
+sort data.txt | uniq -u
+
+Bandit Level 9 → Level 10
+strings data.txt | grep =
+
+Bandit Level 10 → Level 11
+cat data.txt | grep -E '[A-Za-z0-9+/]{4}*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)'
+
+Take the ouput and convert it to plain text using Base64 to File convertor. 
